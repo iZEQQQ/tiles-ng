@@ -9,10 +9,13 @@ export class Tile {
   // tslint:disable-next-line:variable-name
   private _photo: number;
 
+  // tslint:disable-next-line:variable-name
   private _type: string;
 
+  // tslint:disable-next-line:variable-name
   private _price: number;
 
+  // tslint:disable-next-line:variable-name
   private _rating: number;
 
 
