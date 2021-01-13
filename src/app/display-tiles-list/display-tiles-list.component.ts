@@ -8,12 +8,7 @@ import {Tile} from '../model/tile';
 })
 export class DisplayTilesListComponent implements OnInit {
 
-  // tslint:disable-next-line:variable-name
   private _tiles: Tile[];
-
-  constructor(tiles: Tile[]) {
-    this._tiles = tiles;
-  }
 
   get tiles(): Tile[] {
     return this._tiles;
@@ -23,6 +18,8 @@ export class DisplayTilesListComponent implements OnInit {
   set tiles(value: Tile[]) {
     this._tiles = value;
   }
+
+  constructor() { }
 
   ngOnInit(): void {
   }
