@@ -31,22 +31,6 @@ export class Tile {
     this._name = value;
   }
 
-  get photo(): number {
-    return this._photo;
-  }
-
-  set photo(value: number) {
-    this._photo = value;
-  }
-
-  get type(): string {
-    return this._type;
-  }
-
-  set type(value: string) {
-    this._type = value;
-  }
-
   get price(): number {
     return this._price;
   }
