@@ -4,17 +4,28 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DisplayTilesListComponent } from './display-tiles-list/display-tiles-list.component';
 import { TileListViewComponent } from './tile-list-view/tile-list-view.component';
+import { DisplayTileComponent } from './display-tile/display-tile.component';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {TileService} from './tile.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayTilesListComponent,
-    TileListViewComponent
+    TileListViewComponent,
+    DisplayTileComponent
   ],
   imports: [
-    BrowserModule
+    AppRoutingModule,
+    BrowserModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

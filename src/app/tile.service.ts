@@ -16,26 +16,28 @@ export class TileService {
     this.http = http;
   }
 
-  getTiles(): Observable<number[]> {
+  getTiles(): Observable<Tile[]> {
     return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles', {withCredentials: true})
       .pipe(map(value => {
-        return value.ids;
+        const tiles: Tile[] = [];
+        value.tiles.forEach(tile => {
+          tiles.push(new Tile(tile.id, tile.name, tile.price, tile.rating));
+        });
+        return tiles;
       }));
   }
 
-  // TODO a zdjecie ?
-  getTile(id: number): Observable<Tile> {
-    return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
-      .pipe(map(value => {
-        const tile: Tile = new Tile();
-        tile.name = value.name;
-        // tile.photo = value.photo;
-        tile.price = value.price;
-        tile.rating = value.rating;
-        tile.type = value.type;
-        return tile;
-      }));
-  }
+  // // TODO a zdjecie ?
+  // getTile(id: number): Observable<Tile> {
+  //   return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
+  //     .pipe(map(value => {
+  //       const tile: Tile = new Tile();
+  //       tile.name = value.name;
+  //       tile.price = value.price;
+  //       tile.rating = value.rating;
+  //       return tile;
+  //     }));
+  // }
 
 
 }

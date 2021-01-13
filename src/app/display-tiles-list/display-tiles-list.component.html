@@ -1,3 +1,6 @@
 <div *ngIf="tiles">
-  <app-display-tiles-list *ngFor="let tile of tiles" [tiles]="tiles"></app-display-tiles-list>
+  <app-display-tile *ngFor="let tile of tiles" [tile]="tile"></app-display-tile>
 </div>
+
+
+<!--TODO tutaj na divie flex-->

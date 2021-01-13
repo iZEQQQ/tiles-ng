@@ -1,23 +1,19 @@
 export class Tile {
 
-  // tslint:disable-next-line:variable-name
   private _id: number;
 
-  // tslint:disable-next-line:variable-name
   private _name: string;
 
-  // tslint:disable-next-line:variable-name
-  private _photo: number;
-
-  // tslint:disable-next-line:variable-name
-  private _type: string;
-
-  // tslint:disable-next-line:variable-name
   private _price: number;
 
-  // tslint:disable-next-line:variable-name
   private _rating: number;
 
+  constructor(id: number, name: string, price: number, rating: number) {
+    this._id = id;
+    this._name = name;
+    this._price = price;
+    this._rating = rating;
+  }
 
   get id(): number {
     return this._id;

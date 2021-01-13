@@ -9,7 +9,6 @@ import {TileService} from '../tile.service';
 })
 export class TileListViewComponent implements OnInit {
 
-  // tslint:disable-next-line:variable-name
   private _tiles: Tile[] = [];
 
   private service: TileService;
@@ -23,13 +22,8 @@ export class TileListViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._tiles = [];
     this.service.getTiles().subscribe(tiles => {
-      tiles.forEach(id => {
-        this.service.getTile(id).subscribe(tile => {
-          this._tiles.push(tile);
-        });
-      });
+      this._tiles = tiles;
     });
   }
 

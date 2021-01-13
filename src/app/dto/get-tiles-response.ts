@@ -1,7 +1,9 @@
+import {GetTileResponse} from './get-tile-response';
+
 export class GetTilesResponse {
 
-  ids: Array<number>;
+  tiles: Array<GetTileResponse>;
 
 }
 
-// TODO zapytac o te zagniezdzona klase w ResponseTiles
+
