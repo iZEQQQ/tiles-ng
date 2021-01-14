@@ -1,5 +1,4 @@
-div{
-  border-style: solid;
+.component{
   border-collapse: collapse;
   text-align: center;
   width: 320px;
@@ -8,24 +7,68 @@ div{
   box-sizing: border-box;
   padding: 10px;
   margin: 10px;
-
 }
-img{
+.component:hover{
+ background-color: #5D4E6D;
+}
+.component:hover a{
+  background-color: #9CBFA7;
+  color: #5D4E6D;
+}
+.component:hover .visible{
+  color: #9CBFA7;
+}
+img {
   width: 55%;
   height: 55%;
-  border-style: solid;
-  margin-bottom: 5%;
 }
-.text{
+.tooltip{
+  position: relative;
+  display: block;
   text-align: center;
+}
+.tooltip .text {
+  visibility: hidden;
+  width: 280px;
+  background-color: #9CBFA7;
+  color: #5D4E6D;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .text {
+  visibility: visible;
+}
+.tooltip .visible{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 300px;
+  max-width: 280px;
+  color: #5D4E6D;
+  text-transform: uppercase;
+  font-family: Tahoma, serif;
+  font-weight: bold;
+  cursor: default;
 }
-/*.text:hover{*/
-/*  overflow: visible;*/
-/*  white-space: normal;*/
-/*  z-index: 1;*/
-/*  position: absolute;*/
-/*}*/
+.text{
+  text-align: center;
+  color: #5D4E6D;
+  text-transform: uppercase;
+  font-family: Tahoma, serif;
+  font-weight: bold;
+}
+a{
+  display: block;
+  padding: 8px;
+  background-color: #564164;
+  text-decoration: none;
+  font-size: 20px;
+  color: #9CBFA7;
+  text-transform: uppercase;
+  font-family: Tahoma, serif;
+  font-weight: bold;
+}

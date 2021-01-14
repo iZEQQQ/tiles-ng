@@ -1,8 +1,12 @@
-<div *ngIf="tile">
+<div class="component" *ngIf="tile">
+  <article >
 <!--  <p>Id: {{tile.id}}</p>-->
 <!--  <p>Name: {{tile.name}}</p>-->
-  <p class="text">{{tile.name}}</p>
+    <div class="tooltip">
+      <p class="visible">{{tile.name}}</p>
+      <p class="text">{{tile.name}}</p>
+    </div>
   <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
   <a [routerLink]="'/tiles/'+tile.id">Go to tile</a>
+  </article>
 </div>
-
