@@ -28,16 +28,16 @@ export class TileService {
   }
 
   // // TODO a zdjecie ?
-  // getTile(id: number): Observable<Tile> {
-  //   return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
-  //     .pipe(map(value => {
-  //       const tile: Tile = new Tile();
-  //       tile.name = value.name;
-  //       tile.price = value.price;
-  //       tile.rating = value.rating;
-  //       return tile;
-  //     }));
-  // }
+  getTile(id: number): Observable<Tile> {
+    return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
+      .pipe(map(value => {
+        const tile: Tile = new Tile();
+        tile.name = value.name;
+        tile.price = value.price;
+        tile.rating = value.rating;
+        return tile;
+      }));
+  }
 
 
 }

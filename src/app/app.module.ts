@@ -10,13 +10,15 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {TileService} from './tile.service';
 import {HttpClientModule} from '@angular/common/http';
+import { TileViewComponent } from './tile-view/tile-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayTilesListComponent,
     TileListViewComponent,
-    DisplayTileComponent
+    DisplayTileComponent,
+    TileViewComponent
   ],
   imports: [
     AppRoutingModule,

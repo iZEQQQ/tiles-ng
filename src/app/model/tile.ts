@@ -8,7 +8,8 @@ export class Tile {
 
   private _rating: number;
 
-  constructor(id: number, name: string, price: number, rating: number) {
+
+  constructor(id?: number, name?: string, price?: number, rating?: number) {
     this._id = id;
     this._name = name;
     this._price = price;
@@ -39,9 +40,6 @@ export class Tile {
     this._price = value;
   }
 
-  get rating(): number {
-    return this._rating;
-  }
 
   set rating(value: number) {
     this._rating = value;
