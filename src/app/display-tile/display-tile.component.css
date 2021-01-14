@@ -1,0 +1,16 @@
+div{
+  border-style: solid;
+  border-collapse: collapse;
+  text-align: center;
+  width: 90%;
+  height: 90%;
+  background-color: #9CBFA7;
+  box-sizing: border-box;
+
+}
+img{
+  width: 45%;
+  height: 45%;
+  border-style: solid;
+  margin-bottom: 5%;
+}
