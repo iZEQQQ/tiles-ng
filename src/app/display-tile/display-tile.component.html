@@ -1,6 +1,7 @@
 <div *ngIf="tile">
-  <p>Id: {{tile.id}}</p>
-  <p>Name: {{tile.name}}</p>
+<!--  <p>Id: {{tile.id}}</p>-->
+<!--  <p>Name: {{tile.name}}</p>-->
+  <p class="text">{{tile.name}}</p>
   <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
   <a [routerLink]="'/tiles/'+tile.id">Go to tile</a>
 </div>

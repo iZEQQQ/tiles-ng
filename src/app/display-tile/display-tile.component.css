@@ -2,15 +2,30 @@ div{
   border-style: solid;
   border-collapse: collapse;
   text-align: center;
-  width: 90%;
-  height: 90%;
+  width: 320px;
+  height: 320px;
   background-color: #9CBFA7;
   box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
 
 }
 img{
-  width: 45%;
-  height: 45%;
+  width: 55%;
+  height: 55%;
   border-style: solid;
   margin-bottom: 5%;
 }
+.text{
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+/*.text:hover{*/
+/*  overflow: visible;*/
+/*  white-space: normal;*/
+/*  z-index: 1;*/
+/*  position: absolute;*/
+/*}*/
