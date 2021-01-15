@@ -32,6 +32,7 @@ export class TileService {
     return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
       .pipe(map(value => {
         const tile: Tile = new Tile();
+        tile.id = value.id;
         tile.name = value.name;
         tile.price = value.price;
         tile.rating = value.rating;

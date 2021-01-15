@@ -4,6 +4,8 @@ export class GetTileResponse {
 
   name: string;
 
+  type: string;
+
   price: number;
 
   rating: number;
