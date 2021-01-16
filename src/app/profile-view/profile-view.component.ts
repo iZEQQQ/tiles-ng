@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-profile-view',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-view.component.css']
 })
 export class ProfileViewComponent implements OnInit {
-  username: any;
-  id: any;
+  private _user: User;
 
-  constructor() { }
-
+  constructor(user: User) {
+    this._user = user;
+  }
   ngOnInit(): void {
+
   }
 
   changePassword(): void{
