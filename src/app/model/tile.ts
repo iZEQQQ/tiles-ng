@@ -1,4 +1,11 @@
 export class Tile {
+  get type(): string {
+    return this._type;
+  }
+
+  set type(value: string) {
+    this._type = value;
+  }
 
   private _id: number;
 
@@ -6,13 +13,16 @@ export class Tile {
 
   private _price: number;
 
+  private _type: string;
+
   private _rating: number;
 
 
-  constructor(id?: number, name?: string, price?: number, rating?: number) {
+  constructor(id: number, name: string, price: number, type: string, rating: number) {
     this._id = id;
     this._name = name;
     this._price = price;
+    this._type = type;
     this._rating = rating;
   }
 
