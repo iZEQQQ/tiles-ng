@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {GetTilesResponse} from './dto/get-tiles-response';
+import {GetTilesResponse} from './dto/tile/get-tiles-response';
 import {map} from 'rxjs/operators';
 import {Tile} from './model/tile';
-import {GetTileResponse} from './dto/get-tile-response';
+import {GetTileResponse} from './dto/tile/get-tile-response';
 
 @Injectable({
   providedIn: 'root'
