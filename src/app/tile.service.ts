@@ -35,6 +35,7 @@ export class TileService {
         tile.id = value.id;
         tile.name = value.name;
         tile.price = value.price;
+        tile.type = value.type;
         tile.rating = value.rating;
         return tile;
       }));
