@@ -11,5 +11,9 @@ export class AppComponent {
   constructor() {
 
   }
+  // TODO is user logged from session
+  isLogged(): boolean{
+    return true;
+  }
 }
 

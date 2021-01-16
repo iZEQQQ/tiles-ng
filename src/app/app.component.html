@@ -2,6 +2,8 @@
   <nav>
     <ul>
       <li><a routerLink="/tiles">Tiles</a></li>
+      <li><a *ngIf="isLogged()" routerLink="/profile">Profile</a></li>
+      <li><a *ngIf="!isLogged()" routerLink="/login">Log in</a></li>
     </ul>
   </nav>
   <router-outlet></router-outlet>

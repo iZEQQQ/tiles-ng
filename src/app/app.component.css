@@ -12,6 +12,7 @@ li{
   list-style-type: none;
   float: left;
   padding-bottom: 16px;
+  padding-left: 5px;
 }
 li a {
   display: block;

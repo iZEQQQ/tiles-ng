@@ -1,0 +1,45 @@
+.box{
+  background-color: #8FA998;
+  padding: 10px;
+  font-family: "Yu Gothic Medium", serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+.column1{
+  margin-left: 5%;
+  flex: 50%;
+  padding: 5px;
+}
+.column2{
+  flex: 50%;
+  padding: 5px;
+}
+img{
+  width: 80%;
+  height: 80%;
+  float: right;
+  padding-bottom: 10px;
+}
+hr{
+  height:2px;
+  border-width:0;
+  color:#4F345A;
+  background-color:#4F345A
+}
+.button{
+  display: block;
+  padding: 8px;
+  background-color: #564164;
+  text-decoration: none ;
+  font-size: 20px;
+  color: #9CBFA7;
+  text-transform: uppercase;
+  font-family: Tahoma, serif;
+  font-weight: bold;
+}
+.button:hover{
+  background-color: #6a5178;
+  cursor: pointer;
+}
+

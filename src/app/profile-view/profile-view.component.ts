@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-view.component.css']
 })
 export class ProfileViewComponent implements OnInit {
+  username: any;
+  id: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changePassword(): void{
+    alert('Change Password');
+  }
+  logOut(): void{
+  }
 }
