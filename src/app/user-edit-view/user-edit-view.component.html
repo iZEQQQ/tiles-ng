@@ -1,1 +1,8 @@
-<p>user-edit-view works!</p>
+<article>
+  <form (ngSubmit)="onSubmit()" *ngIf="user">
+    <label>
+      <input type="text" [(ngModel)]="user.password" name="password">
+    </label>
+    <input type="submit">
+  </form>
+</article>
