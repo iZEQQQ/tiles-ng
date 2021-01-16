@@ -49,8 +49,8 @@ export class UserService {
     req.password = user.password;
     this.http.put<any>('http://localhost:8080/api/users/' + user.login, req, {withCredentials: true})
       .subscribe(
-        value => console.log(value),
-        error => console.log(error));
+        value => console.log('Updated'),
+        error => console.log('ERROR'));
 
   }
 
