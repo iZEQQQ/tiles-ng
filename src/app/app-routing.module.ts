@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TileListViewComponent} from './tile-list-view/tile-list-view.component';
 import {TileViewComponent} from './tile-view/tile-view.component';
 import {ProfileViewComponent} from './profile-view/profile-view.component';
+import {UserEditViewComponent} from './user-edit-view/user-edit-view.component';
 
 const routes: Routes = [
   {
@@ -14,8 +15,12 @@ const routes: Routes = [
     component: TileViewComponent
   },
   {
-  path: 'profile',
-  component: ProfileViewComponent
+    path: 'profile/:login',
+    component: ProfileViewComponent
+  },
+  {
+    path: 'profile/:login/edit',
+    component: UserEditViewComponent
   }
 ];
 
