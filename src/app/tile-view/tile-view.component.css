@@ -1,8 +1,29 @@
-div{
+:root{
+  --purpledark: #4F345A;
+  --purplelight: #5d4e6d;
+  --greenlight: #9cbfa7;
+  --greendark: #8fa998;
+}
+.box{
   background-color: #8FA998;
   padding: 10px;
+  font-family: "Yu Gothic Medium", serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+.column1{
+  margin-left: 5%;
+  flex: 50%;
+  padding: 5px;
+}
+.column2{
+  flex: 50%;
+  padding: 5px;
 }
 img{
-  width: 200px;
-  height: 200px;
+  width: 80%;
+  height: 80%;
+  float: right;
+  padding-bottom: 10px;
 }

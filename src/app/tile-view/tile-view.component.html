@@ -1,7 +1,13 @@
 <article>
-  <div *ngIf="tile">
-    <p>Name: {{tile.name}}</p>
-    <p>Price: {{tile.price}} zl</p>
-    <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
+  <div class="box" *ngIf="tile">
+    <div class="column1">
+      <p>{{tile.name}}</p>
+      <p>Item #{{tile.id}}</p>
+      ------------------------
+      <p>Price: {{tile.price}} zl</p>
+    </div>
+    <div class="column2">
+      <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
+    </div>
   </div>
 </article>

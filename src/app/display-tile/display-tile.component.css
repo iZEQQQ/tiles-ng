@@ -29,7 +29,7 @@ img {
 }
 .tooltip .text {
   visibility: hidden;
-  width: 280px;
+  width: 290px;
   background-color: #9CBFA7;
   color: #5D4E6D;
   text-align: center;
@@ -47,7 +47,7 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 280px;
+  max-width: 320px;
   color: #5D4E6D;
   text-transform: uppercase;
   font-family: Tahoma, serif;
