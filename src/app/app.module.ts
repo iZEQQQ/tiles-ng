@@ -12,6 +12,7 @@ import {TileService} from './tile.service';
 import {HttpClientModule} from '@angular/common/http';
 import { TileViewComponent } from './tile-view/tile-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { UserEditViewComponent } from './user-edit-view/user-edit-view.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
     TileListViewComponent,
     DisplayTileComponent,
     TileViewComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    UserEditViewComponent
   ],
   imports: [
     AppRoutingModule,

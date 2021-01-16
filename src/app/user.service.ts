@@ -18,7 +18,7 @@ export class UserService {
     this.http = http;
   }
 
-  getUser(id: number): Observable<User> {
+  getUser(id: string): Observable<User> {
     return this.http.get<GetUserResponse>('http://localhost:8080/api/users/' + id, {withCredentials: true})
       .pipe(map(value => {
         const user: User = new User();
