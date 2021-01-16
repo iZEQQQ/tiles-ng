@@ -21,7 +21,7 @@ export class TileService {
       .pipe(map(value => {
         const tiles: Tile[] = [];
         value.tiles.forEach(tile => {
-          tiles.push(new Tile(tile.id, tile.name, tile.price, tile.rating));
+          tiles.push(new Tile(tile.id, tile.name, tile.price, tile.type));
         });
         return tiles;
       }));
@@ -36,7 +36,8 @@ export class TileService {
         tile.name = value.name;
         tile.price = value.price;
         tile.type = value.type;
-        tile.rating = value.rating;
+        // TODO dodac rating
+        // tile.rating = value.rating;
         return tile;
       }));
   }
