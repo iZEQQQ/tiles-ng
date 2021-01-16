@@ -27,3 +27,9 @@ img{
   float: right;
   padding-bottom: 10px;
 }
+hr{
+  height:2px;
+  border-width:0;
+  color:#4F345A;
+  background-color:#4F345A
+}
