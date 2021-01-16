@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {TileService} from './tile.service';
 import {HttpClientModule} from '@angular/common/http';
 import { TileViewComponent } from './tile-view/tile-view.component';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TileViewComponent } from './tile-view/tile-view.component';
     DisplayTilesListComponent,
     TileListViewComponent,
     DisplayTileComponent,
-    TileViewComponent
+    TileViewComponent,
+    ProfileViewComponent
   ],
   imports: [
     AppRoutingModule,

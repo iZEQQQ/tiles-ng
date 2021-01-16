@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TileListViewComponent} from './tile-list-view/tile-list-view.component';
 import {TileViewComponent} from './tile-view/tile-view.component';
+import {ProfileViewComponent} from './profile-view/profile-view.component';
 
- // TODO connection refused z uwagi na wymuszenie logowania
 const routes: Routes = [
   {
     path: 'tiles',
@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'tiles/:tileId',
     component: TileViewComponent
+  },
+  {
+  path: 'profile',
+  component: ProfileViewComponent
   }
 ];
 
