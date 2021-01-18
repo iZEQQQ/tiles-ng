@@ -40,9 +40,8 @@ export class UserService {
         error => console.log(error));
   }
 
-  // TODO jaki to ma typ ????
-  // tslint:disable-next-line:typedef
-  putUser(user: User) {
+
+  putUser(user: User): void {
     const req = new PutUserRequest();
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json');

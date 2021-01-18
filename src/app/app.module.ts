@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { TileViewComponent } from './tile-view/tile-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { UserEditViewComponent } from './user-edit-view/user-edit-view.component';
+import { LoginViewComponent } from './login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserEditViewComponent } from './user-edit-view/user-edit-view.component
     DisplayTileComponent,
     TileViewComponent,
     ProfileViewComponent,
-    UserEditViewComponent
+    UserEditViewComponent,
+    LoginViewComponent
   ],
   imports: [
     AppRoutingModule,

@@ -4,6 +4,7 @@ import {TileListViewComponent} from './tile-list-view/tile-list-view.component';
 import {TileViewComponent} from './tile-view/tile-view.component';
 import {ProfileViewComponent} from './profile-view/profile-view.component';
 import {UserEditViewComponent} from './user-edit-view/user-edit-view.component';
+import {LoginViewComponent} from './login-view/login-view.component';
 
 const routes: Routes = [
   {
@@ -15,12 +16,16 @@ const routes: Routes = [
     component: TileViewComponent
   },
   {
-    path: 'profile/:login',
+    path: 'profile',
     component: ProfileViewComponent
   },
   {
-    path: 'profile/:login/edit',
+    path: 'profile/edit',
     component: UserEditViewComponent
+  },
+  {
+    path: 'login',
+    component: LoginViewComponent
   }
 ];
 
