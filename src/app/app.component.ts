@@ -11,7 +11,7 @@ import {AuthenticationService} from './authentication.service';
 })
 export class AppComponent implements OnInit {
   title = 'tiles-ng';
-  username = 'admin';
+
   private _user: User;
 
   get user(): User {
