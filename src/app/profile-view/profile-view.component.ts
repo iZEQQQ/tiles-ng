@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../user.service';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -17,7 +18,8 @@ export class ProfileViewComponent implements OnInit {
   }
 
   constructor(private root: ActivatedRoute,
-              private service: UserService) {
+              private service: UserService,
+              private auth: AuthenticationService) {
   }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
-  logOut(): void {
+  onLoggout(): void {
+    this.auth.loggout();
+  }
+
+  isLogged(): boolean {
+    return this.auth.isLogged();
   }
 }
