@@ -6,8 +6,8 @@
 
       <p class="button" (click)="logOut()">Log out</p>
     </div>
-    <div class="column2">
-      <a [routerLink]="'/profile/'+user.login+'/edit'">Change password</a>
+    <div class="column2" *ngIf="">
+      <a [routerLink]="'/profile/edit'">Change password</a>
       <p><img src="https://www.sweetdecor.pl/oplatek-na-tort-nosacz-janusz-00584a-21-cm.1.jpg" alt=""></p>
     </div>
   </div>
