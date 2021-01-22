@@ -5,12 +5,6 @@
       <li><a *ngIf="isLogged()" routerLink="/profile">Profile</a></li>
       <li><a class="right" *ngIf="!isLogged()" routerLink="/login">Log in</a></li>
       <li><a class="right" *ngIf="!isLogged()" routerLink="/register">Register</a></li>
-<!--      <article *ngIf="isLogged()" >-->
-<!--        <form (ngSubmit)="onLoggout()">-->
-<!--          <input type="submit" value="Log out">-->
-<!--        </form>-->
-<!--      </article>-->
-
     </ul>
   </nav>
   <router-outlet></router-outlet>

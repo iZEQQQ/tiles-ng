@@ -2,8 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../user.service';
 import {Router} from '@angular/router';
-import {LoginViewComponent} from "../login-view/login-view.component";
-import {AuthenticationService} from "../authentication.service";
+import {LoginViewComponent} from '../login-view/login-view.component';
+import {AuthenticationService} from '../authentication.service';
+import {Observable} from 'rxjs';
+import {GetUserResponse} from '../dto/user/get-user-response';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {PostUserRequest} from '../dto/user/post-user-request';
 
 @Component({
   selector: 'app-register-user-view',
@@ -28,7 +32,10 @@ export class RegisterUserViewComponent implements OnInit {
     return this._user;
   }
 
-  constructor(private service: UserService, private router: Router, private auth: AuthenticationService) {
+  constructor(private service: UserService,
+              private router: Router,
+              private auth: AuthenticationService,
+              private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -40,9 +47,20 @@ export class RegisterUserViewComponent implements OnInit {
       this.service.postUser(this._user);
       this.auth.login(this._user.login, this._user.password);
       this.router.navigate(['/tiles']);
-    }else{
+    } else {
       alert('Both passwords need to be the same');
     }
+  }
+
+
+  register(login: string, pass: string): Observable<PostUserRequest> {
+    const user = login + ':' + pass;
+    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
+    const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/user', {headers: header});
+    obs.subscribe(value => {
+      localStorage.setItem('userAuth:userPass', btoa(user));
+    });
+    return obs;
   }
 
 }
