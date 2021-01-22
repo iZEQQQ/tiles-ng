@@ -1,12 +1,6 @@
-:root{
-  --purpledark: #4F345A;
-  --purplelight: #5d4e6d;
-  --greenlight: #9cbfa7;
-  --greendark: #8fa998;
-}
 .box{
-  background-color: #8FA998;
-  padding: 10px;
+
+  padding-top: 50px;
   font-family: "Yu Gothic Medium", serif;
   text-transform: uppercase;
   display: flex;
@@ -30,6 +24,6 @@ img{
 hr{
   height:2px;
   border-width:0;
-  color:#4F345A;
-  background-color:#4F345A
+  color: black;
+  background-color: black;
 }

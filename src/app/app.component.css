@@ -1,3 +1,7 @@
+/*TODO vvvv FIX FLOAT RIGHT vvvv*/
+.right{
+  float: right;
+}
 nav{
   list-style-type: none;
   overflow: hidden;
@@ -27,4 +31,3 @@ li a {
 li a:hover {
   border-bottom: #5FBFF9 solid;
 }
-

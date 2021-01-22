@@ -30,6 +30,7 @@ export class ProfileViewComponent implements OnInit {
   }
 
   onLoggout(): void {
+
     this.auth.loggout();
   }
 

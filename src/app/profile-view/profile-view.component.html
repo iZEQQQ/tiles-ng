@@ -4,7 +4,7 @@
       <p>Username: {{user.login}}</p>
       <hr>
 
-      <p class="button" (click)="onLoggout()">Log out</p>
+      <p class="button" (click)="onLoggout()" routerLink="/tiles">Log out</p>
     </div>
     <div class="column2" *ngIf="isLogged()">
       <a [routerLink]="'/profile/edit'">Change password</a>
