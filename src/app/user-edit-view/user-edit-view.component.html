@@ -1,5 +1,5 @@
 <article>
-  <form (ngSubmit)="onSubmit()" *ngIf="user">
+  <form (ngSubmit)="changePass(user.login,user.password)" *ngIf="user">
     <label>
       <input type="text" [(ngModel)]="user.password" name="password">
     </label>

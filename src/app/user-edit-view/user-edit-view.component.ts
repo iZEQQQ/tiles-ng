@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../user.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthenticationService} from '../authentication.service';
+import {Observable} from 'rxjs';
+import {PostUserRequest} from '../dto/user/post-user-request';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-user-edit-view',
@@ -17,23 +21,22 @@ export class UserEditViewComponent implements OnInit {
   }
 
   constructor(private root: ActivatedRoute,
-              private userService: UserService) {
+              private userService: UserService,
+              private authorService: AuthenticationService,
+              private http: HttpClient) {
   }
 
-  ngOnInit(): void {
-    const userId = this.root.snapshot.paramMap.get('login');
-    if (userId) {
-      this.userService.getUser(userId).subscribe(user => {
-        this._user = user;
-      });
-    }else{
-      console.log('Pomocy nie wiem co tu dac ');
-    }
+
+
+  changePass(login: string, pass: string): Observable<PostUserRequest> {
+    const user = login + ':' + pass;
+    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
+    const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/user', {headers: header});
+    obs.subscribe(value => {
+      localStorage.setItem('userAuth:userPass', btoa(user));
+    });
+    return obs;
   }
 
-  // tslint:disable-next-line:typedef
-  onSubmit() {
-    this.userService.putUser(this._user);
-  }
 
 }
