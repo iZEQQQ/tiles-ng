@@ -14,6 +14,7 @@ import { TileViewComponent } from './tile-view/tile-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { UserEditViewComponent } from './user-edit-view/user-edit-view.component';
 import { LoginViewComponent } from './login-view/login-view.component';
+import { RegisterUserViewComponent } from './register-user-view/register-user-view.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginViewComponent } from './login-view/login-view.component';
     TileViewComponent,
     ProfileViewComponent,
     UserEditViewComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    RegisterUserViewComponent
   ],
   imports: [
     AppRoutingModule,

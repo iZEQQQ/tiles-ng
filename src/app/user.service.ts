@@ -11,7 +11,7 @@ import {PutUserRequest} from './dto/user/put-user-request';
   providedIn: 'root'
 })
 export class UserService {
-
+  //TODO naprawic service
   private http: HttpClient;
 
   constructor(http: HttpClient) {
@@ -19,7 +19,7 @@ export class UserService {
   }
 
   getUser(id: string): Observable<User> {
-    return this.http.get<GetUserResponse>('http://localhost:8080/api/users/' + id, {withCredentials: true})
+    return this.http.get<GetUserResponse>('http://localhost:8080/api/user/' , {withCredentials: true})
       .pipe(map(value => {
         const user: User = new User();
         user.login = value.login;

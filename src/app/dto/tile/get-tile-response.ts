@@ -8,6 +8,8 @@ export class GetTileResponse {
 
   price: number;
 
+  page: string;
+
   rating: number;
 
 }

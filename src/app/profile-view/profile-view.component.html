@@ -4,9 +4,9 @@
       <p>Username: {{user.login}}</p>
       <hr>
 
-      <p class="button" (click)="logOut()">Log out</p>
+      <p class="button" (click)="onLoggout()">Log out</p>
     </div>
-    <div class="column2" *ngIf="">
+    <div class="column2" *ngIf="isLogged()">
       <a [routerLink]="'/profile/edit'">Change password</a>
       <p><img src="https://www.sweetdecor.pl/oplatek-na-tort-nosacz-janusz-00584a-21-cm.1.jpg" alt=""></p>
     </div>

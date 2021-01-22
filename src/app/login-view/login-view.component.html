@@ -1,7 +1,7 @@
 <article *ngIf="!isLogged()" >
   <form (ngSubmit)="onSubmit()">
     <label>
-      <input type="text" [(ngModel)]="login" name="password">
+      <input type="text" [(ngModel)]="login" name="login">
     </label>
     <label>
       <input type="password" [(ngModel)]="pass" name="password">
@@ -11,5 +11,4 @@
 </article>
 
 
-<!--TODO rejestracja to wyslanie formularza postem tak smao jak nowa aukcja-->
 
