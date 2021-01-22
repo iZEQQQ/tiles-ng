@@ -2,6 +2,7 @@
   <form (ngSubmit)="onSubmit()">
     <input type="text" [(ngModel)]="user.login" name="name">
     <input type="password" [(ngModel)]="user.password" name="password">
+    <input type="password" [(ngModel)]="passwordRepeated" name="passwordRepeated">
     <input type="submit">
   </form>
 </article>

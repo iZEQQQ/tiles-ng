@@ -11,6 +11,15 @@ export class RegisterUserViewComponent implements OnInit {
 
   private _user: User;
 
+  private _passwordRepeated: string;
+
+  get passwordRepeated(): string {
+    return this._passwordRepeated;
+  }
+
+  set passwordRepeated(value: string) {
+    this._passwordRepeated = value;
+  }
 
   get user(): User {
     return this._user;
@@ -24,7 +33,11 @@ export class RegisterUserViewComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.service.postUser(this._user);
+    if (this._passwordRepeated === this._user.password) {
+      this.service.postUser(this._user);
+    }else{
+      alert('Both passwords need to be the same');
+    }
   }
 
 }

@@ -24,4 +24,6 @@ export class User {
   set password(value: string) {
     this._password = value;
   }
+
+
 }
