@@ -1,7 +1,7 @@
 .flexbox{
   display: flex;
-  padding: 10px;
-  background-color: #8FA998;
+  padding-top: 50px;
+
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
