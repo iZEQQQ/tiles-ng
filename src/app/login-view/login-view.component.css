@@ -17,9 +17,6 @@ body {
   border-radius: 0;
   overflow: hidden;
 }
-.form-input-material input {
-  color: white;
-}
 .login-form {
   display: flex;
   flex-direction: column;

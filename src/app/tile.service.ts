@@ -37,7 +37,7 @@ export class TileService {
         tile.type = value.type;
         tile.page = value.page;
         // TODO dodac rating
-        // tile.rating = value.rating;
+        tile.rating = value.rating;
         return tile;
       }));
   }
