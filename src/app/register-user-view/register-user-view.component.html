@@ -1,8 +1,18 @@
 <article>
-  <form (ngSubmit)="onSubmit()">
-    <input type="text" [(ngModel)]="user.login" name="name">
-    <input type="password" [(ngModel)]="user.password" name="password">
-    <input type="password" [(ngModel)]="passwordRepeated" name="passwordRepeated">
-    <input type="submit">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+    <div class="form-input-material">
+      <input type="text" [(ngModel)]="user.login" name="name" id="name" placeholder=" " autocomplete="off" class="form-control-material" required />
+      <label for="name"> Username</label>
+    </div>
+    <div class="form-input-material">
+      <input type="password" [(ngModel)]="user.password" name="password" id="password" placeholder=" " autocomplete="off" class="form-control-material" required />
+      <label for="password"> Password</label>
+    </div>
+    <div class="form-input-material">
+      <input type="password" [(ngModel)]="passwordRepeated" name="passwordRepeated" id="passwordRepeated" placeholder=" " autocomplete="off" class="form-control-material" required />
+      <label for="passwordRepeated"> Repeat Password</label>
+    </div>
+    <button type="submit"class="btn btn-primary btn-ghost">Login</button>
   </form>
 </article>

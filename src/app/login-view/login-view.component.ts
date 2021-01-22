@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
+import {UserService} from "../user.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-view',
@@ -12,7 +14,7 @@ export class LoginViewComponent implements OnInit {
   private _pass: string;
 
 
-  constructor(private auth: AuthenticationService) {
+  constructor(private auth: AuthenticationService, private router: Router) {
   }
 
   get login(): string {
@@ -38,6 +40,7 @@ export class LoginViewComponent implements OnInit {
     this.auth.login(this._login, this._pass).subscribe(value => {
       console.log(value);
     });
+    this.router.navigate(['/tiles']);
   }
 
   isLogged(): boolean {

@@ -3,11 +3,10 @@
     <div class="column1">
       <p>Username: {{user.login}}</p>
       <hr>
-
+      <a class="button" [routerLink]="'/profile/edit'">Change password</a>
       <p class="button" (click)="onLoggout()" routerLink="/tiles">Log out</p>
     </div>
-    <div class="column2" *ngIf="isLogged()">
-      <a [routerLink]="'/profile/edit'">Change password</a>
+    <div class="column2">
       <p><img src="https://www.sweetdecor.pl/oplatek-na-tort-nosacz-janusz-00584a-21-cm.1.jpg" alt=""></p>
     </div>
   </div>
