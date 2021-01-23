@@ -14,10 +14,14 @@ export class TileViewComponent implements OnInit {
 
 
   private _tile: Tile;
-
+  private _totalstar = 5;
 
   get tile(): Tile {
     return this._tile;
+  }
+
+  get totalstar(): number {
+    return this._totalstar;
   }
 
   constructor(private root: ActivatedRoute,
@@ -39,5 +43,6 @@ export class TileViewComponent implements OnInit {
       New Value: ${$event.newValue},
       Checked Color: ${$event.starRating.checkedcolor},
       Unchecked Color: ${$event.starRating.uncheckedcolor}`);
+    this.tile.rating = $event.newValue;
   }
 }
