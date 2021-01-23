@@ -27,3 +27,24 @@ hr{
   color: black;
   background-color: black;
 }
+.button{
+  display: block;
+  padding: 8px;
+  background-color: #564164;
+  text-decoration: none ;
+  font-size: 20px;
+  color: #9CBFA7;
+  text-transform: uppercase;
+  font-family: Tahoma, serif;
+  font-weight: bold;
+}
+.button:hover{
+  background-color: #6a5178;
+  cursor: pointer;
+}
+star-rating{
+  height: 100px;
+}
+.stars{
+  background-color: #4F345A;
+}

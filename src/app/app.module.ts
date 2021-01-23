@@ -15,6 +15,7 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { UserEditViewComponent } from './user-edit-view/user-edit-view.component';
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterUserViewComponent } from './register-user-view/register-user-view.component';
+import {RatingModule} from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegisterUserViewComponent } from './register-user-view/register-user-vi
     BrowserModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RatingModule
   ],
   providers: [TileService],
   bootstrap: [AppComponent]

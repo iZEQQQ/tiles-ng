@@ -5,9 +5,16 @@
       <p>Item ID #{{tile.id}}</p>
       <p>Item Type: {{tile.type}}</p>
       <p>Scrapped page: {{tile.page}}</p>
-      <p>Tile rating: {{tile.rating}}</p>
+      <p>Tile rating: {{tile.rating}} </p>
+      <p class="button" (click)="addRating()">Add Rating</p>
       <hr>
       <p>Price: {{tile.price}} zl</p>
+      <div class ="stars" style="text-align:center">
+        <h1>
+          ng-starrating demo
+        </h1>
+        <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+      </div>
     </div>
     <div class="column2">
       <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
