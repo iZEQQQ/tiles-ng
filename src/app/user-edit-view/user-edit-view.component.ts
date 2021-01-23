@@ -12,7 +12,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   templateUrl: './user-edit-view.component.html',
   styleUrls: ['./user-edit-view.component.css']
 })
-export class UserEditViewComponent implements OnInit {
+export class UserEditViewComponent {
 
   private _user: User;
 
@@ -27,7 +27,6 @@ export class UserEditViewComponent implements OnInit {
   }
 
 
-
   changePass(login: string, pass: string): Observable<PostUserRequest> {
     const user = login + ':' + pass;
     const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
@@ -40,6 +39,5 @@ export class UserEditViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
 }

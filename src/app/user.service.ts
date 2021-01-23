@@ -27,7 +27,7 @@ export class UserService {
       }));
   }
 
-  // TODO jak obslozyc errora ???
+
   postUser(user: User): void {
     const req = new PostUserRequest();
     const headers = new HttpHeaders();
@@ -40,17 +40,5 @@ export class UserService {
         error => console.log(error));
   }
 
-
-  putUser(user: User): void {
-    const req = new PutUserRequest();
-    const headers = new HttpHeaders();
-    headers.set('Content-Type', 'application/json');
-    req.password = user.password;
-    this.http.put<any>('http://localhost:8080/api/users/' + user.login, req, {withCredentials: true})
-      .subscribe(
-        value => console.log('Updated'),
-        error => console.log('ERROR'));
-
-  }
 
 }
