@@ -3,6 +3,7 @@ import {Tile} from '../model/tile';
 import {ActivatedRoute} from '@angular/router';
 import {TileService} from '../tile.service';
 import {StarRatingComponent} from 'ng-starrating';
+import {Rating} from '../model/rating';
 
 
 @Component({
@@ -12,6 +13,11 @@ import {StarRatingComponent} from 'ng-starrating';
 })
 export class TileViewComponent implements OnInit {
 
+  private _rating: Rating;
+
+  get rating(): Rating {
+    return this._rating;
+  }
 
   private _tile: Tile;
   private _totalstar = 5;
@@ -33,11 +39,15 @@ export class TileViewComponent implements OnInit {
     this.tileService.getTile(Number(tileId)).subscribe(tile => {
       this._tile = tile;
     });
+    this.tileService.getRating(Number(tileId)).subscribe(rating => {
+      this._rating = rating;
+    });
   }
 
   addRating(): void {
     this.tile.rating = 1;
   }
+
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }): void {
     alert(`Old Value:${$event.oldValue},
       New Value: ${$event.newValue},

@@ -16,6 +16,10 @@ import { UserEditViewComponent } from './user-edit-view/user-edit-view.component
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterUserViewComponent } from './register-user-view/register-user-view.component';
 import {RatingModule} from 'ng-starrating';
+import { DisplayRecommendedComponent } from './display-recommended/display-recommended.component';
+import { DisplayRecommendedListComponent } from './display-recommended-list/display-recommended-list.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import {RatingModule} from 'ng-starrating';
     ProfileViewComponent,
     UserEditViewComponent,
     LoginViewComponent,
-    RegisterUserViewComponent
+    RegisterUserViewComponent,
+    DisplayRecommendedComponent,
+    DisplayRecommendedListComponent
   ],
   imports: [
     AppRoutingModule,

@@ -37,6 +37,10 @@ export class UserEditViewComponent {
     return obs;
   }
 
+  isLogged(): boolean{
+   return this.authorService.isLogged();
+  }
+
   ngOnInit(): void {
   }
 

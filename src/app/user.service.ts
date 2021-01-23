@@ -11,7 +11,7 @@ import {PutUserRequest} from './dto/user/put-user-request';
   providedIn: 'root'
 })
 export class UserService {
-  //TODO naprawic service
+
   private http: HttpClient;
 
   constructor(http: HttpClient) {

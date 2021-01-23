@@ -1,5 +1,5 @@
 <article>
-  <form (ngSubmit)="changePass(user.login,user.password)" *ngIf="user">
+  <form (ngSubmit)="changePass(user.login,user.password)" *ngIf="isLogged()">
     <label>
       <input type="text" [(ngModel)]="user.password" name="password">
     </label>
