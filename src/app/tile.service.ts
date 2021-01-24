@@ -40,7 +40,7 @@ export class TileService {
   }
 
   postRating(id: number): Observable<Rating> {
-    return this.http.get<PostRatingRequest>('http://localhost:8080/api/tiles/' + id + '/rating', {withCredentials: true})
+    return this.http.post<PostRatingRequest>('http://localhost:8080/api/tiles/' + id + '/rating', {withCredentials: true})
       .pipe(map(value => {
         const rating: Rating = new Rating();
         rating.rating = value.rating;
