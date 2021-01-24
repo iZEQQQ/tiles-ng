@@ -46,7 +46,9 @@ export class RegisterUserViewComponent implements OnInit {
     if (this._passwordRepeated === this._user.password) {
       this.service.postUser(this._user);
       this.auth.login(this._user.login, this._user.password);
-      this.router.navigate(['/tiles']);
+      if (this.auth.isLogged()) {
+        this.router.navigate(['/tiles']);
+      }
     } else {
       alert('Both passwords need to be the same');
     }

@@ -13,12 +13,15 @@ export class UserService {
 
   private http: HttpClient;
 
+
   constructor(http: HttpClient) {
     this.http = http;
   }
 
   getUser(id: string): Observable<User> {
-    return this.http.get<GetUserResponse>('http://localhost:8080/api/user/' , {withCredentials: true})
+    const item = localStorage.getItem('userAuth:userPass');
+    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(item));
+    return this.http.get<GetUserResponse>('http://localhost:8080/api/user', {headers: header, withCredentials: true})
       .pipe(map(value => {
         const user: User = new User();
         user.login = value.login;
@@ -30,10 +33,12 @@ export class UserService {
   postUser(user: User): void {
     const req = new PostUserRequest();
     const headers = new HttpHeaders();
+    const item = req.login + ':' + req.password;
+    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(item));
     headers.set('Content-Type', 'application/json');
     req.login = user.login;
     req.password = user.password;
-    this.http.post('http://localhost:8080/api/users', req, {withCredentials: true})
+    this.http.post('http://localhost:8080/api/users', req, {headers: header, withCredentials: true})
       .subscribe(
         value => console.log(value),
         error => console.log(error));

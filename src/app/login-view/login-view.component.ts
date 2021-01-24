@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
-import {UserService} from "../user.service";
+import {UserService} from '../user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -46,7 +46,6 @@ export class LoginViewComponent implements OnInit {
   isLogged(): boolean {
     return this.auth.isLogged();
   }
-
 
 
 }

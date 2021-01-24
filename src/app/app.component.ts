@@ -24,14 +24,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const userId = this.root.snapshot.paramMap.get('login');
-    this.service.getUser(userId).subscribe(user => {
-      this._user = user;
-    });
-  }
-
-  onLoggout(): void {
-    this.auth.loggout();
   }
 
   isLogged(): boolean {

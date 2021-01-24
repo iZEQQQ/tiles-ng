@@ -32,6 +32,18 @@ export class TileService {
       }));
   }
 
+
+  getRecommended(): Observable<Tile[]> {
+    return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles/recommended', {withCredentials: true})
+      .pipe(map(value => {
+        const tiles: Tile[] = [];
+        value.tiles.forEach(tile => {
+          tiles.push(new Tile(tile.id, tile.name, tile.price, tile.type, tile.page));
+        });
+        return tiles;
+      }));
+  }
+
   getRating(id: number): Observable<Rating> {
     return this.http.get<GetRatingResponse>('http://localhost:8080/api/tiles/' + id + '/rating', {withCredentials: true})
       .pipe(map(value => {

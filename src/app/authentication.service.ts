@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {GetUserResponse} from './dto/user/get-user-response';
+import {User} from './model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class AuthenticationService {
     localStorage.removeItem('userAuth:userPass');
   }
 
+
   login(login: string, pass: string): Observable<GetUserResponse> {
     const user = login + ':' + pass;
     const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
@@ -32,8 +34,6 @@ export class AuthenticationService {
     });
     return obs;
   }
-
-
 
 
 }
