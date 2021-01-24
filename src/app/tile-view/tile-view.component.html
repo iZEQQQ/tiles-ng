@@ -5,7 +5,7 @@
       <p>Item ID #{{tile.id}}</p>
       <p>Item Type: {{tile.type}}</p>
       <p>Scrapped page: {{tile.page}}</p>
-      <p>Tile rating: {{rating.rating}} </p>
+      <p>Tile rating: </p>
       <p *ngIf="_rated">User rating: {{_userRating}}</p>
         <star-rating value={{rating.rating}} totalstars={{totalstar}} checkedcolor="red" uncheckedcolor="black" size="24px"
                      readonly="false" (rate)="onRate($event)"></star-rating>
