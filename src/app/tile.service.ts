@@ -41,19 +41,6 @@ export class TileService {
       }));
   }
 
-  postUser(user: User): void {
-    const req = new PostUserRequest();
-    const headers = new HttpHeaders();
-    headers.set('Content-Type', 'application/json');
-    req.login = user.login;
-    req.password = user.password;
-    this.http.post('http://localhost:8080/api/users', req, {withCredentials: true})
-      .subscribe(
-        value => console.log(value),
-        error => console.log(error));
-  }
-
-
   postRating(id: number, ratingVal: number): void {
     const req = new PostRatingRequest();
     const headers = new HttpHeaders();
