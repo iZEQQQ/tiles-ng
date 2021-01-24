@@ -43,16 +43,11 @@ export class TileViewComponent implements OnInit {
       this._rating = rating;
     });
   }
-
-  addRating(): void {
-    this.tile.rating = 1;
-  }
-
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }): void {
-    alert(`Old Value:${$event.oldValue},
-      New Value: ${$event.newValue},
-      Checked Color: ${$event.starRating.checkedcolor},
-      Unchecked Color: ${$event.starRating.uncheckedcolor}`);
+    // alert(`Old Value:${$event.oldValue},
+    //   New Value: ${$event.newValue},
+    //   Checked Color: ${$event.starRating.checkedcolor},
+    //   Unchecked Color: ${$event.starRating.uncheckedcolor}`);
     this.tile.rating = $event.newValue;
   }
 }
