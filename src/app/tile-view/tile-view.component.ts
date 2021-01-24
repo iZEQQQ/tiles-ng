@@ -5,7 +5,6 @@ import {TileService} from '../tile.service';
 import {StarRatingComponent} from 'ng-starrating';
 import {Rating} from '../model/rating';
 
-
 @Component({
   selector: 'app-tile-view',
   templateUrl: './tile-view.component.html',
@@ -14,7 +13,8 @@ import {Rating} from '../model/rating';
 export class TileViewComponent implements OnInit {
 
   private _rating: Rating;
-
+  _rated = false;
+  _userRating: number;
   get rating(): Rating {
     return this._rating;
   }
@@ -48,6 +48,9 @@ export class TileViewComponent implements OnInit {
     //   New Value: ${$event.newValue},
     //   Checked Color: ${$event.starRating.checkedcolor},
     //   Unchecked Color: ${$event.starRating.uncheckedcolor}`);
-    this.tile.rating = $event.newValue;
+    this._userRating = $event.newValue;
+    this.tileService.postRating(this.tile.id);
+    this._rated = true;
+    alert(this.rating.rating);
   }
 }
