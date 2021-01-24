@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 import {User} from './model/user';
 import {map} from 'rxjs/operators';
 import {PostUserRequest} from './dto/user/post-user-request';
-import {PutUserRequest} from './dto/user/put-user-request';
 
 @Injectable({
   providedIn: 'root'
