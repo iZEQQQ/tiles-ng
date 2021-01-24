@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GetTilesResponse} from './dto/tile/get-tiles-response';
 import {map} from 'rxjs/operators';
@@ -8,6 +8,8 @@ import {GetTileResponse} from './dto/tile/get-tile-response';
 import {GetRatingResponse} from './dto/rating/get-rating-response';
 import {Rating} from './model/rating';
 import {PostRatingRequest} from './dto/rating/post-rating-request';
+import {User} from './model/user';
+import {PostUserRequest} from './dto/user/post-user-request';
 
 @Injectable({
   providedIn: 'root'
@@ -39,13 +41,27 @@ export class TileService {
       }));
   }
 
-  postRating(id: number): Observable<Rating> {
-    return this.http.post<PostRatingRequest>('http://localhost:8080/api/tiles/' + id + '/rating', {withCredentials: true})
-      .pipe(map(value => {
-        const rating: Rating = new Rating();
-        rating.rating = value.rating;
-        return rating;
-      }));
+  postUser(user: User): void {
+    const req = new PostUserRequest();
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    req.login = user.login;
+    req.password = user.password;
+    this.http.post('http://localhost:8080/api/users', req, {withCredentials: true})
+      .subscribe(
+        value => console.log(value),
+        error => console.log(error));
+  }
+
+
+  postRating(id: number, ratingVal: number): void {
+    const req = new PostRatingRequest();
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    req.rating = ratingVal;
+    this.http.post('http://localhost:8080/api/tiles/' + id + '/rating/add', req, {withCredentials: true})
+      .subscribe(value => console.log('GIT'),
+        error => console.log(error));
   }
 
   getTile(id: number): Observable<Tile> {
@@ -60,6 +76,5 @@ export class TileService {
         return tile;
       }));
   }
-
 
 }

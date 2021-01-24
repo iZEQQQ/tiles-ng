@@ -15,6 +15,7 @@ export class TileViewComponent implements OnInit {
   private _rating: Rating;
   _rated = false;
   _userRating: number;
+
   get rating(): Rating {
     return this._rating;
   }
@@ -31,7 +32,7 @@ export class TileViewComponent implements OnInit {
   }
 
   constructor(private root: ActivatedRoute,
-              private tileService: TileService) {
+              public tileService: TileService) {
   }
 
   ngOnInit(): void {
@@ -43,14 +44,14 @@ export class TileViewComponent implements OnInit {
       this._rating = rating;
     });
   }
+
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }): void {
     // alert(`Old Value:${$event.oldValue},
     //   New Value: ${$event.newValue},
     //   Checked Color: ${$event.starRating.checkedcolor},
     //   Unchecked Color: ${$event.starRating.uncheckedcolor}`);
     this._userRating = $event.newValue;
-    this.tileService.postRating(this.tile.id);
+    this.tileService.postRating(this.tile.id, $event.newValue);
     this._rated = true;
-    alert(this.rating.rating);
   }
 }
