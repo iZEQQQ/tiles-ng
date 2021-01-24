@@ -15,6 +15,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class UserEditViewComponent {
 
   private _user: User;
+  passwordRepeated: any;
 
   get user(): User {
     return this._user;
@@ -27,21 +28,23 @@ export class UserEditViewComponent {
   }
 
 
-  changePass(login: string, pass: string): Observable<PostUserRequest> {
-    const user = login + ':' + pass;
-    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
-    const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/user', {headers: header});
-    obs.subscribe(value => {
-      localStorage.setItem('userAuth:userPass', btoa(user));
-    });
-    return obs;
+  onSubmit(login: string, pass: string): Observable<PostUserRequest> {
+    if (this.passwordRepeated === this._user.password) {
+      const user = login + ':' + pass;
+      const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
+      const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/user', {headers: header});
+      obs.subscribe(value => {
+        localStorage.setItem('userAuth:userPass', btoa(user));
+      });
+      return obs;
+    } else {
+      alert('Both passwords need to be the same');
+    }
   }
 
   isLogged(): boolean{
    return this.authorService.isLogged();
   }
 
-  ngOnInit(): void {
-  }
-
 }
+
