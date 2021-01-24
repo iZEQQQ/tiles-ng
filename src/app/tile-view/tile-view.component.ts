@@ -20,14 +20,14 @@ export class TileViewComponent implements OnInit {
   }
 
   private _tile: Tile;
-  private _totalstar = 5;
+  private _totalStar = 5;
 
   get tile(): Tile {
     return this._tile;
   }
 
-  get totalstar(): number {
-    return this._totalstar;
+  get totalStar(): number {
+    return this._totalStar;
   }
 
   constructor(private root: ActivatedRoute,

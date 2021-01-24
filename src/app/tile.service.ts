@@ -7,6 +7,7 @@ import {Tile} from './model/tile';
 import {GetTileResponse} from './dto/tile/get-tile-response';
 import {GetRatingResponse} from './dto/rating/get-rating-response';
 import {Rating} from './model/rating';
+import {PostRatingRequest} from './dto/rating/post-rating-request';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,14 @@ export class TileService {
       }));
   }
 
+  postRating(id: number): Observable<Rating> {
+    return this.http.get<PostRatingRequest>('http://localhost:8080/api/tiles/' + id + '/rating', {withCredentials: true})
+      .pipe(map(value => {
+        const rating: Rating = new Rating();
+        rating.rating = value.rating;
+        return rating;
+      }));
+  }
 
   getTile(id: number): Observable<Tile> {
     return this.http.get<GetTileResponse>('http://localhost:8080/api/tiles/' + id, {withCredentials: true})
