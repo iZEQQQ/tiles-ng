@@ -12,7 +12,6 @@ import {TileService} from './tile.service';
 import {HttpClientModule} from '@angular/common/http';
 import { TileViewComponent } from './tile-view/tile-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
-import { UserEditViewComponent } from './user-edit-view/user-edit-view.component';
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterUserViewComponent } from './register-user-view/register-user-view.component';
 import {RatingModule} from 'ng-starrating';
@@ -29,7 +28,6 @@ import { DisplayRecommendedListComponent } from './display-recommended-list/disp
     DisplayTileComponent,
     TileViewComponent,
     ProfileViewComponent,
-    UserEditViewComponent,
     LoginViewComponent,
     RegisterUserViewComponent,
     DisplayRecommendedComponent,

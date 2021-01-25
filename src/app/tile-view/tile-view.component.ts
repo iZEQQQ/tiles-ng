@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {TileService} from '../tile.service';
 import {StarRatingComponent} from 'ng-starrating';
 import {Rating} from '../model/rating';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-tile-view',
@@ -32,7 +33,8 @@ export class TileViewComponent implements OnInit {
   }
 
   constructor(private root: ActivatedRoute,
-              public tileService: TileService) {
+              public tileService: TileService,
+              public auth: AuthenticationService) {
   }
 
   ngOnInit(): void {
@@ -46,10 +48,6 @@ export class TileViewComponent implements OnInit {
   }
 
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }): void {
-    // alert(`Old Value:${$event.oldValue},
-    //   New Value: ${$event.newValue},
-    //   Checked Color: ${$event.starRating.checkedcolor},
-    //   Unchecked Color: ${$event.starRating.uncheckedcolor}`);
     this._userRating = $event.newValue;
     this.tileService.postRating(this.tile.id, $event.newValue);
     this._rated = true;

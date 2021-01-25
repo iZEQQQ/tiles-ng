@@ -20,7 +20,7 @@ export class TileService {
   constructor(http: HttpClient) {
     this.http = http;
   }
-  //TODO Musi przyjmowac 2 argumenty rozmiar strony i numer strony
+
   getTiles(): Observable<Tile[]> {
     return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles', {withCredentials: true})
       .pipe(map(value => {
@@ -31,7 +31,6 @@ export class TileService {
         return tiles;
       }));
   }
-  //TODO dodac metode zwracajaca liczbe tile
 
   getRecommended(): Observable<Tile[]> {
     return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles/recommended', {withCredentials: true})
@@ -54,10 +53,9 @@ export class TileService {
   }
 
   postRating(id: number, ratingVal: number): void {
-    const req = new PostRatingRequest();
+    const req = new PostRatingRequest(ratingVal);
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json');
-    req.rating = ratingVal;
     this.http.post('http://localhost:8080/api/tiles/' + id + '/rating/add', req, {withCredentials: true})
       .subscribe(value => console.log('GIT'),
         error => console.log(error));
