@@ -9,7 +9,7 @@ import {TileService} from '../tile.service';
 })
 export class TileListViewComponent implements OnInit {
 
-  private _tiles: Tile[] = [];
+  private _tiles: Tile[];
 
   private service: TileService;
 
@@ -22,9 +22,12 @@ export class TileListViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //TODO dodc wielkosc strony w angularze pobieram liczbe taili dziele przez liczbe strony i ng forem wygenerowac przyciski do kazdego przycisku akcje on click zaladuj strone 1 potem kolejna i dopiero w reakcji wywoluje metode zwracajaca kafelki query param size i numer strony
+
     this.service.getTiles().subscribe(tiles => {
       this._tiles = tiles;
     });
+
   }
 
 }

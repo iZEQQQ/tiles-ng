@@ -44,25 +44,19 @@ export class RegisterUserViewComponent implements OnInit {
 
   onSubmit(): void {
     if (this._passwordRepeated === this._user.password) {
-      this.service.postUser(this._user);
-      this.auth.login(this._user.login, this._user.password);
-      if (this.auth.isLogged()) {
-        this.router.navigate(['/tiles']);
-      }
+      this.register(this.user.login, this.passwordRepeated);
     } else {
       alert('Both passwords need to be the same');
     }
   }
 
 
-  register(login: string, pass: string): Observable<PostUserRequest> {
-    const user = login + ':' + pass;
-    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + btoa(user));
-    const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/user', {headers: header});
+  register(login: string, pass: string): void {
+    const req = new PostUserRequest(login, pass);
+    const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/users', req);
     obs.subscribe(value => {
-      localStorage.setItem('userAuth:userPass', btoa(user));
+      alert('ok');
     });
-    return obs;
   }
 
 }

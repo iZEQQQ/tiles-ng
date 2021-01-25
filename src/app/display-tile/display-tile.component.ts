@@ -31,11 +31,7 @@ export class DisplayTileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const tileId = this.root.snapshot.paramMap.get('tileId');
-    this.tileService.getTile(Number(tileId)).subscribe(tile => {
-      this._tile = tile;
-    });
-    this.tileService.getRating(Number(tileId)).subscribe(rating => {
+    this.tileService.getRating(this.tile.id).subscribe(rating => {
       this._rating = rating;
     });
   }

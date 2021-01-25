@@ -20,7 +20,7 @@ export class TileService {
   constructor(http: HttpClient) {
     this.http = http;
   }
-
+  //TODO Musi przyjmowac 2 argumenty rozmiar strony i numer strony
   getTiles(): Observable<Tile[]> {
     return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles', {withCredentials: true})
       .pipe(map(value => {
@@ -31,7 +31,7 @@ export class TileService {
         return tiles;
       }));
   }
-
+  //TODO dodac metode zwracajaca liczbe tile
 
   getRecommended(): Observable<Tile[]> {
     return this.http.get<GetTilesResponse>('http://localhost:8080/api/tiles/recommended', {withCredentials: true})
