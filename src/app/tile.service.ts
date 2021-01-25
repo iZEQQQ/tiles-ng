@@ -53,10 +53,12 @@ export class TileService {
   }
 
   postRating(id: number, ratingVal: number): void {
+    const item = localStorage.getItem('userAuth:userPass');
+    const header: HttpHeaders = new HttpHeaders().set('Authorization', 'Basic ' + item);
     const req = new PostRatingRequest(ratingVal);
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json');
-    this.http.post('http://localhost:8080/api/tiles/' + id + '/rating/add', req, {withCredentials: true})
+    this.http.post('http://localhost:8080/api/tiles/' + id + '/rating/add', req, {withCredentials: true, headers: header})
       .subscribe(value => console.log('GIT'),
         error => console.log(error));
   }
