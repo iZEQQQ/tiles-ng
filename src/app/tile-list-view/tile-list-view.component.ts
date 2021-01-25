@@ -25,7 +25,6 @@ export class TileListViewComponent implements OnInit {
     this.service.getTiles().subscribe(tiles => {
       this._tiles = tiles;
     });
-
   }
 
 }

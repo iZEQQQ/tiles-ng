@@ -15,8 +15,6 @@ import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterUserViewComponent } from './register-user-view/register-user-view.component';
 import {RatingModule} from 'ng-starrating';
-import { DisplayRecommendedComponent } from './display-recommended/display-recommended.component';
-import { DisplayRecommendedListComponent } from './display-recommended-list/display-recommended-list.component';
 
 
 
@@ -29,9 +27,7 @@ import { DisplayRecommendedListComponent } from './display-recommended-list/disp
     TileViewComponent,
     ProfileViewComponent,
     LoginViewComponent,
-    RegisterUserViewComponent,
-    DisplayRecommendedComponent,
-    DisplayRecommendedListComponent
+    RegisterUserViewComponent
   ],
   imports: [
     AppRoutingModule,

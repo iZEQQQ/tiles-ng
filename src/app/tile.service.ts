@@ -8,8 +8,7 @@ import {GetTileResponse} from './dto/tile/get-tile-response';
 import {GetRatingResponse} from './dto/rating/get-rating-response';
 import {Rating} from './model/rating';
 import {PostRatingRequest} from './dto/rating/post-rating-request';
-import {User} from './model/user';
-import {PostUserRequest} from './dto/user/post-user-request';
+
 
 @Injectable({
   providedIn: 'root'
@@ -60,7 +59,7 @@ export class TileService {
     headers.set('Content-Type', 'application/json');
     this.http.post('http://localhost:8080/api/tiles/' + id + '/rating/add', req, {withCredentials: true, headers: header})
       .subscribe(value => console.log('GIT'),
-        error => console.log(error));
+        error => console.log(error + 'Changing source code is not a bug'));
   }
 
   getTile(id: number): Observable<Tile> {
