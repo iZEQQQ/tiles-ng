@@ -52,7 +52,7 @@ export class RegisterUserViewComponent implements OnInit {
 
 
   register(login: string, pass: string): void {
-    const req = new PostUserRequest(login, pass);
+    const req = new PostUserRequest(login.trim(), pass.trim());
     const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/users', req);
     obs.subscribe(value => {
       alert('ok');
