@@ -29,4 +29,7 @@ export class AppComponent implements OnInit {
   isLogged(): boolean {
     return this.auth.isLogged();
   }
+  logout(): void {
+    this.auth.loggout();
+  }
 }

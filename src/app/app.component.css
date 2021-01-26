@@ -30,4 +30,5 @@ li a {
 }
 li a:hover {
   border-bottom: #5FBFF9 solid;
+  cursor: pointer;
 }

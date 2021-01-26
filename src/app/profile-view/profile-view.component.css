@@ -23,22 +23,26 @@ img{
 hr{
   height:2px;
   border-width:0;
-  color:#4F345A;
-  background-color:#4F345A
+  color: black;
+  background-color: black;
 }
 .button{
+  text-align: center;
   display: block;
   padding: 8px;
-  background-color: #564164;
+  background-color: #285B67 ;
   text-decoration: none ;
   font-size: 20px;
-  color: #9CBFA7;
+  color: white;
   text-transform: uppercase;
   font-family: Tahoma, serif;
   font-weight: bold;
 }
 .button:hover{
-  background-color: #6a5178;
+  background-color: #3F8FA2;
   cursor: pointer;
 }
-
+.username{
+  text-align: center;
+  font-size: 50px;
+}

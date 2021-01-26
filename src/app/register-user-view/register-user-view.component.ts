@@ -2,12 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../user.service';
 import {Router} from '@angular/router';
-import {LoginViewComponent} from '../login-view/login-view.component';
 import {AuthenticationService} from '../authentication.service';
-import {Observable} from 'rxjs';
-import {GetUserResponse} from '../dto/user/get-user-response';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {PostUserRequest} from '../dto/user/post-user-request';
+
 
 @Component({
   selector: 'app-register-user-view',
@@ -17,8 +15,11 @@ import {PostUserRequest} from '../dto/user/post-user-request';
 export class RegisterUserViewComponent implements OnInit {
 
   private _user: User;
+  private passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$');
+  private userRegex = new RegExp('^(?=[a-zA-Z0-9._]{4,14}$)(?!.*[_.]{2})[^_.].*[^_.]$');
 
   private _passwordRepeated: string;
+  private messageSuccess: boolean;
 
   get passwordRepeated(): string {
     return this._passwordRepeated;
@@ -44,19 +45,42 @@ export class RegisterUserViewComponent implements OnInit {
 
   onSubmit(): void {
     if (this._passwordRepeated === this._user.password) {
-      this.register(this.user.login, this.passwordRepeated);
+      const testPass = this.passwordRegex.test(this._user.password);
+      const testUser = this.userRegex.test(this._user.login);
+      console.log(testUser + '\n' + testPass);
+      if (testPass && testUser){
+        this.register(this.user.login, this.passwordRepeated);
+        this.messageSuccess = true;
+
+        setTimeout(() => {
+          this.messageSuccess = false;
+        }, 3000);
+        this.auth.login(this._user.login, this.passwordRepeated).subscribe(value => {
+          console.log(value);
+        });
+        this.router.navigate(['/tiles']);
+      }
+      else {
+        if (testUser === false){
+          alert('Username doesnt match regex');
+        }
+        if (testPass === false){
+          alert('Password doesnt match regex');
+        }
+      }
     } else {
       alert('Both passwords need to be the same');
     }
   }
 
 
-  register(login: string, pass: string): void {
+  register(login: string, pass: string): boolean {
     const req = new PostUserRequest(login.trim(), pass.trim());
     const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/users', req);
     obs.subscribe(value => {
       alert('ok');
     });
+    return true;
   }
 
 }
