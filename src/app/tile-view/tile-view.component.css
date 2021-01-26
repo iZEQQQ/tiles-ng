@@ -14,11 +14,11 @@
 .column2{
   flex: 50%;
   padding: 5px;
+  text-align: center;
 }
 img{
-  width: 80%;
-  height: 80%;
-  float: right;
+  width: 50%;
+  height: 50%;
   padding-bottom: 10px;
 }
 hr{
@@ -47,4 +47,8 @@ star-rating{
 }
 .stars{
   background-color: #4F345A;
+}
+.recommended{
+  display: flex;
+  justify-content: center;
 }

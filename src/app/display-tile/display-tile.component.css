@@ -2,41 +2,34 @@
   border-collapse: collapse;
   text-align: center;
   width: 320px;
-  height: 360px;
+  height: 320px;
   box-sizing: border-box;
   padding: 10px;
   margin: 10px;
   background: white;
+  position: relative;
 }
 .component:hover{
   cursor: pointer;
   background: #F5F5F5;
 }
-.component:hover a{
-
-}
-.component:hover .visible{
-
-}
 img {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
+  position: relative;
 }
 .text{
   text-align: center;
-
   text-transform: uppercase;
   font-family: Tahoma, serif;
   font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-a{
-  display: block;
-  padding: 8px;
-
-  text-decoration: none;
-  font-size: 20px;
-
-  text-transform: uppercase;
-  font-family: Tahoma, serif;
-  font-weight: bold;
+star-rating{
+  position: absolute;
+  top: 90%;
+  left: 30%;
 }

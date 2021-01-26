@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Tile} from '../model/tile';
 import {ActivatedRoute} from '@angular/router';
 import {TileService} from '../tile.service';
@@ -12,7 +12,6 @@ import {AuthenticationService} from '../authentication.service';
   styleUrls: ['./tile-view.component.css']
 })
 export class TileViewComponent implements OnInit {
-
   private _rating: Rating;
   _rated = false;
   _userRating: number;
@@ -23,6 +22,16 @@ export class TileViewComponent implements OnInit {
 
   private _tile: Tile;
   private _totalStar = 5;
+  private _tiles: Tile[];
+
+  get tiles(): Tile[] {
+    return this._tiles;
+  }
+
+  @Input()
+  set tiles(value: Tile[]) {
+    this._tiles = value;
+  }
 
   get tile(): Tile {
     return this._tile;
@@ -44,6 +53,9 @@ export class TileViewComponent implements OnInit {
     });
     this.tileService.getRating(Number(tileId)).subscribe(rating => {
       this._rating = rating;
+    });
+    this.tileService.getRecommended().subscribe(tiles => {
+      this._tiles = tiles;
     });
   }
 

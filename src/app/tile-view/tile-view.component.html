@@ -16,5 +16,9 @@
       <p><img src="http://localhost:8080/api/tiles/{{tile.id}}/photo" alt=""></p>
     </div>
   </div>
+  <hr>
+  <div *ngIf="tile" class="recommended">
+      <app-display-tile *ngFor="let tile of tiles" [tile]="tile"></app-display-tile>
+  </div>
 </article>
 

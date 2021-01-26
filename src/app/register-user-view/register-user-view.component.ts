@@ -3,6 +3,7 @@ import {User} from '../model/user';
 import {UserService} from '../user.service';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../authentication.service';
+
 import {HttpClient} from '@angular/common/http';
 import {PostUserRequest} from '../dto/user/post-user-request';
 
@@ -52,13 +53,13 @@ export class RegisterUserViewComponent implements OnInit {
         this.register(this.user.login, this.passwordRepeated);
         this.messageSuccess = true;
 
-        setTimeout(() => {
-          this.messageSuccess = false;
-        }, 3000);
-        this.auth.login(this._user.login, this.passwordRepeated).subscribe(value => {
-          console.log(value);
-        });
-        this.router.navigate(['/tiles']);
+        // setTimeout(() => {
+        //   this.messageSuccess = false;
+        // }, 3000);
+        // this.auth.login(this._user.login, this.passwordRepeated).subscribe(value => {
+        //   console.log(value);
+        // });
+        this.router.navigate(['/login']);
       }
       else {
         if (testUser === false){
@@ -74,13 +75,12 @@ export class RegisterUserViewComponent implements OnInit {
   }
 
 
-  register(login: string, pass: string): boolean {
+  register(login: string, pass: string): void {
     const req = new PostUserRequest(login.trim(), pass.trim());
     const obs = this.http.post<PostUserRequest>('http://localhost:8080/api/users', req);
     obs.subscribe(value => {
       alert('ok');
     });
-    return true;
   }
 
 }
