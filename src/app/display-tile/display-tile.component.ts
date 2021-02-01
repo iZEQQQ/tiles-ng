@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Tile} from '../model/tile';
 import {StarRatingComponent} from 'ng-starrating';
 import {Rating} from '../model/rating';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TileService} from '../tile.service';
 
 @Component({
@@ -27,7 +27,8 @@ export class DisplayTileComponent implements OnInit {
   }
 
   constructor(private root: ActivatedRoute,
-              public tileService: TileService) {
+              public tileService: TileService,
+              public router: Router) {
   }
 
   ngOnInit(): void {

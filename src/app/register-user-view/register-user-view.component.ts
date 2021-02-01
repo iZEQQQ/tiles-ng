@@ -16,8 +16,8 @@ import {PostUserRequest} from '../dto/user/post-user-request';
 export class RegisterUserViewComponent implements OnInit {
 
   private _user: User;
-  private passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$');
-  private userRegex = new RegExp('^(?=[a-zA-Z0-9._]{4,14}$)(?!.*[_.]{2})[^_.].*[^_.]$');
+  private passwordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,20}$');
+  private userRegex = new RegExp('^(?=[a-zA-Z0-9._]{4,20}$)(?!.*[_.]{2})[^_.].*[^_.]$');
 
   private _passwordRepeated: string;
   private messageSuccess: boolean;
